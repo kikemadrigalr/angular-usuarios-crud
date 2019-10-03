@@ -33,8 +33,8 @@ export class UsuariosService {
   }
 
   //modificar usuario
-  updateUsuario(id : string, updatedUsuario : User){
-    return this.http.put(`${this.API_URI}/usuarios`, updatedUsuario);
+  updateUsuario(id : string|number, updatedUsuario : User){
+    return this.http.put(`${this.API_URI}/usuarios/${id}`, updatedUsuario);
   }
 
   //eliminar usuario

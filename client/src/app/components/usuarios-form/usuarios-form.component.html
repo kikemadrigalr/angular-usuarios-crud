@@ -1,5 +1,5 @@
 <div class="text-center">
-        <h3>Nuevo Usuario</h3>
+        <h3>{{titulo}}</h3>
     </div>
     <div class="row p-2">
         <div class="col-md-6 offset-3">
@@ -22,7 +22,7 @@
                             <input type="text" name="telefono"[(ngModel)]="usuario.telefono" placeholder="04001234567" class="form-control">
                         </div>
     
-                        <button class="btn btn-success btn-block" (click)="guardarNuevoUsuario()">Guardar</button>
+                        <button class="btn btn-success btn-block" (click)="edit ? editarUsuario() : guardarNuevoUsuario()">Guardar</button>
                     </form>
                 </div>
             </div>
