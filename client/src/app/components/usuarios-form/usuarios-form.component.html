@@ -1,0 +1,30 @@
+<div class="text-center">
+        <h3>Nuevo Usuario</h3>
+    </div>
+    <div class="row p-2">
+        <div class="col-md-6 offset-3">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="nombres" [(ngModel)]="usuario.nombres" placeholder="Nombres" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="apellidos" [(ngModel)]="usuario.apellidos" placeholder="Apellidos" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="cedula" [(ngModel)]="usuario.cedula" placeholder="12345678" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="correo" [(ngModel)]="usuario.correo" placeholder="usuario@mail.com" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="telefono"[(ngModel)]="usuario.telefono" placeholder="04001234567" class="form-control">
+                        </div>
+    
+                        <button class="btn btn-success btn-block" (click)="guardarNuevoUsuario()">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
