@@ -150,6 +150,7 @@ export class UsuariosFormComponent implements OnInit {
         return true;
       }
       else {
+        //correo no existe
         false
       }
     }
@@ -158,14 +159,13 @@ export class UsuariosFormComponent implements OnInit {
   comprobarCorreo(correo: string) {
     for (let i = 0; i < Object.keys(this.usuarios).length; i++) {
       if (this.usuarios[i].correo === correo) {
-        //  ('cedula existe')
+        //  ('correo existe')
         return true;
       }
       else {
-        //cedula no existe
+        //correo no existe
         false
       }
     }
-  }s
-
+  }
 }
