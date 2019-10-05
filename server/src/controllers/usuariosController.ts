@@ -25,6 +25,18 @@ class UsuariosController {
           res.json(result);
        });
     }
+
+      //obtener usuario por cedula
+    public async getOneCedula(req : Request, res : Response) : Promise<any>{
+      
+      const { cedula } = req.params;
+
+       await pool.query('SELECT * FROM usuarios WHERE cedula = ?', [cedula], function(err, result, fields) {
+        if (err) throw err;
+          console.log(result);
+          res.json(result);
+       });
+    }
   
     //metodo create - crear un usuario
     public async create(req : Request, res : Response)  : Promise<void>{

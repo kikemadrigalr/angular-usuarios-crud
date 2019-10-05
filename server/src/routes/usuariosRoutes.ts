@@ -16,6 +16,8 @@ class UsuariosRoutes {
         
       //ruta para leer un usuario recibiendo su id
       this.router.get("/:id", usuariosController.getOne);
+
+      this.router.get("/:cedula", usuariosController.getOneCedula);
   
       //ruta para agregar un usuario 
       this.router.post("/", usuariosController.create);

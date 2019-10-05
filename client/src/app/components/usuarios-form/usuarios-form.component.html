@@ -5,21 +5,24 @@
         <div class="col-md-6 offset-3">
             <div class="card">
                 <div class="card-body">
-                    <form>
+                    <form #userForm="ngForm">
                         <div class="form-group">
-                            <input type="text" name="nombres" [(ngModel)]="usuario.nombres" placeholder="Nombres" class="form-control" autofocus>
+                            <input  type="text" name="nombres" id="nombres" [(ngModel)]="usuario.nombres"  #name="ngModel" placeholder="Nombres" class="form-control" autofocus required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="apellidos" [(ngModel)]="usuario.apellidos" placeholder="Apellidos" class="form-control" >
+                            <input type="text" name="apellidos" [(ngModel)]="usuario.apellidos" placeholder="Apellidos" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="cedula" [(ngModel)]="usuario.cedula" placeholder="12345678" class="form-control">
+                            <input type="text" name="cedula" [(ngModel)]="usuario.cedula" #name="ngModel" maxlength="8"   placeholder="12345678" class="form-control" required
+                            (keypress)="onlyNumberKey($event)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" name="correo" [(ngModel)]="usuario.correo" placeholder="usuario@mail.com" class="form-control" required [email]="true">
                         </div>
                         <div class="form-group">
-                            <input type="email" name="correo" [(ngModel)]="usuario.correo" placeholder="usuario@mail.com" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="telefono"[(ngModel)]="usuario.telefono" placeholder="04001234567" class="form-control">
+                            <input type="text" name="telefono" [(ngModel)]="usuario.telefono"  #name="ngModel" maxlength="11" placeholder="04001234567" class="form-control" required
+                            (keypress)="onlyNumberKey($event)">
                         </div>
     
                         <button class="btn btn-success btn-block" (click)="edit ? editarUsuario() : guardarNuevoUsuario()">Guardar</button>

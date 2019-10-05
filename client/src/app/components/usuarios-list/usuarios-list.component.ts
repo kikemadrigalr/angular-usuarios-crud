@@ -17,7 +17,7 @@ export class UsuariosListComponent implements OnInit {
   ngOnInit() {
     this.obtenerListado();
   }
-
+  
   obtenerListado(){
     this.user.getUsuarios().subscribe(
       resp =>{

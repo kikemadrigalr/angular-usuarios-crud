@@ -27,6 +27,10 @@ export class UsuariosService {
     return this.http.get(`${this.API_URI}/usuarios/${id}`);
   }
 
+  getCedulaUsuario(cedula : string|number){
+    return this.http.get(`${this.API_URI}/usuarios/${cedula}`);
+  }
+
   // guardar un usuario
   saveUsuario(usuario : User){
     return this.http.post(`${this.API_URI}/usuarios`, usuario);
